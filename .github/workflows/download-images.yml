@@ -1,0 +1,42 @@
+name: Download Images
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create directories
+        run: |
+          mkdir -p img/galeri
+          mkdir -p assets
+
+      - name: Download logo
+        run: |
+          curl -L --retry 3 -o assets/logo.jpg 'https://scontent-hou1-1.cdninstagram.com/v/t51.82787-19/622621730_17847326871671072_8388195696987537470_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmV4cGVyaW1lbnRhbCJ9&_nc_ht=scontent-hou1-1.cdninstagram.com&_nc_cat=108&_nc_oc=Q6cZ2gHhD8lTpik6ZSttMS5zg_szOnG5A8h5VyH5ibTB_UT5gb_jZW1-87336mDqgRTH5O0&_nc_ohc=S3g0bdsfE44Q7kNvwHP8l5Z&_nc_gid=aqttCl5nzZ4Ln9pZlQ8mvA&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af-I5E7Q7STYBJBCNB7b9_GaoDLiWwZcxpj24zDHOtReFQ&oe=6A3C76FF&_nc_sid=8b3546' || true
+
+      - name: Download gallery images
+        run: |
+          curl -L --retry 3 -o img/galeri/ig_1.jpg 'https://scontent-atl3-3.cdninstagram.com/v/t51.82787-15/621519832_17847327297671072_1495585189974759203_n.jpg?stp=dst-jpg_e35_s1080x1080_sh2.08_tt6&_nc_ht=scontent-atl3-3.cdninstagram.com&_nc_cat=108&_nc_oc=Q6cZ2gEPGcEB6NBNMRq0MotM2ZzFZakmUzTB0enz9me2D4-_mv_YcEjk9yRA4AgDyavuW1g&_nc_ohc=QLhb4ZzPV4cQ7kNvwFm85PL&_nc_gid=uhCVSpRvqTMEvIQcNkJUjw&edm=APs17CUBAAAA&ccb=7-5&oh=00_Af9U3SsXlfWkcvNInMdq1qg-4jQ1wKCKDdePmOrAqDCX2g&oe=6A3C7D89&_nc_sid=10d13b' || true
+          curl -L --retry 3 -o img/galeri/ig_2.jpg 'https://scontent-ord5-1.cdninstagram.com/v/t51.82787-15/622391677_17847344160671072_8134430215134619238_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_ht=scontent-ord5-1.cdninstagram.com&_nc_cat=108&_nc_oc=Q6cZ2gHqlZDyfm-VZI3ODorIGr1fbbnrQwRt_VLi-hzzeZT0AwnGo6lGQ9buA2eJKLxpzGQ&_nc_ohc=axkN7Qs2p3YQ7kNvwEpt2Cs&_nc_gid=vly3jDQEX0XebaxUIb_Ovw&edm=APs17CUBAAAA&ccb=7-5&oh=00_Af8677ZfVrfJcsDVDLm7eomBxQ6Dg-Fu1iV-D0EQhw9EYQ&oe=6A3C7961&_nc_sid=10d13b' || true
+          curl -L --retry 3 -o img/galeri/ig_3.jpg 'https://scontent-dfw6-2.cdninstagram.com/v/t51.82787-15/621645897_17847341349671072_2726243645674383007_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_ht=scontent-dfw6-2.cdninstagram.com&_nc_cat=108&_nc_oc=Q6cZ2gFA7ju8Kt669a_Vf2ARNExzCGfBik87jTM-8xfujW3XIhTjNm4hC_nkT2R__UNLYgA&_nc_ohc=WFExLM7zxo8Q7kNvwFYaRGU&_nc_gid=23uemaJriVIU3k_3v0HVyQ&edm=APs17CUBAAAA&ccb=7-5&oh=00_Af_zUvnRNSxVKROHgHV09rODyXO6tPKZgGPmYiUimjo5hQ&oe=6A3C79C9&_nc_sid=10d13b' || true
+          curl -L --retry 3 -o img/galeri/ig_4.jpg 'https://scontent-mia3-3.cdninstagram.com/v/t51.82787-15/621441692_17847340866671072_7368824743345486409_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_ht=scontent-mia3-3.cdninstagram.com&_nc_cat=108&_nc_oc=Q6cZ2gH8ILHOj-PuGIBvuPHTByPr9asyoYHFgWUFOu73qw0wh49pKcgo5Q0sfTqrTT7A4Qo&_nc_ohc=C6ujgYwcO2oQ7kNvwEAI0au&_nc_gid=joKIArk1Rzy1doDrY_-YGQ&edm=APs17CUBAAAA&ccb=7-5&oh=00_Af82Y1zk1Pt7L0OLuR7Ayszt7k7mthocMwMQhqdfX8KqOw&oe=6A3C5D53&_nc_sid=10d13b' || true
+          curl -L --retry 3 -o img/galeri/ig_5.jpg 'https://scontent-lga3-3.cdninstagram.com/v/t51.71878-15/623491487_910069504755326_4753547259815545995_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_cat=102&_nc_oc=Q6cZ2gHmFmb8bSe8mJ42XCOSwNp7LCa11xkLaq_S2g9RaSyPxwAP65rjdqJN4_PrXhyuvwg&_nc_ohc=OepFd49-QC4Q7kNvwEjQzuk&_nc_gid=tsogYjozqWmeRYeW_cxQcg&edm=APs17CUBAAAA&ccb=7-5&oh=00_Af_hm-hW3VIGvkANC8lbSr_QTM3-UCXjWeLH1wKsMLPdLQ&oe=6A3C501B&_nc_sid=10d13b' || true
+          curl -L --retry 3 -o img/galeri/ig_6.jpg 'https://scontent-hou1-1.cdninstagram.com/v/t51.71878-15/621810824_2284279838723658_8717833499283052243_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-hou1-1.cdninstagram.com&_nc_cat=106&_nc_oc=Q6cZ2gFwuwpH6CjqPhahVfHoU7p8KMBXH6tyfZIRliXbWz3zDmtAApbj6H4mm620kln0DTg&_nc_ohc=i7SSkQCSaa4Q7kNvwGPjLQd&_nc_gid=lNTrmgK_WVZeSDTAfpBkBg&edm=APs17CUBAAAA&ccb=7-5&oh=00_Af8-wFSbFzzLBN_u2PQTX4h-QKRQO7LsQ_gRNikCfihXVQ&oe=6A3C740A&_nc_sid=10d13b' || true
+          curl -L --retry 3 -o img/galeri/ig_7.jpg 'https://scontent-lax3-1.cdninstagram.com/v/t51.82787-15/723144606_17877305103671072_3906835443755761986_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_ht=scontent-lax3-1.cdninstagram.com&_nc_cat=108&_nc_oc=Q6cZ2gGdAx0LJHlNSoo6oorqg9ZpT-XcXfUF-geVjZ--JP_467qNDEii2bj7lEevVUZc5A8&_nc_ohc=AXvAFSP_cjQQ7kNvwEko4sz&_nc_gid=cWPpKpsgKnLHlDTfYVJteQ&edm=APs17CUBAAAA&ccb=7-5&oh=00_Af_XoHWqqa2Mq1nQ_q_9wIhGQgJVQ5I9V5swbUqE0u3Wdw&oe=6A3C75BB&_nc_sid=10d13b' || true
+          curl -L --retry 3 -o img/galeri/ig_8.jpg 'https://scontent-lax3-1.cdninstagram.com/v/t51.71878-15/622437973_1226358579072614_7049369699035122557_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-lax3-1.cdninstagram.com&_nc_cat=102&_nc_oc=Q6cZ2gGwIvigs3HOFJAXfsWY8IQpXhwjM7U9z_9VkSqJCLEQQ1DXSPTgJZodmDcgAKAj-RY&_nc_ohc=WtnwR-OEaL4Q7kNvwHU2XA2&_nc_gid=n03m1TKSSjrEZkrhxpkz_Q&edm=APs17CUBAAAA&ccb=7-5&oh=00_Af8VuwKWi5X8Q5hbyatVfkAEGh_mX2zER-eanFcyuRnOXQ&oe=6A3C4D00&_nc_sid=10d13b' || true
+          curl -L --retry 3 -o img/galeri/ig_9.jpg 'https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/621576246_17847346737671072_5005600290622978685_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=108&_nc_oc=Q6cZ2gGlwYwTWuo4kUQNhF1ZulO7kNQtKgU2pX3NLfoLVR44ofkLuSctgIS4nkdfwZ7nc_M&_nc_ohc=ExdUNYlL-ZoQ7kNvwHlCeEo&_nc_gid=iweHX49WFybfiIaZecSZyg&edm=APs17CUBAAAA&ccb=7-5&oh=00_Af-c_FWZ-UvVtFf8K3rOYZIBKcdXbjkdhJgqdChDHTbZJQ&oe=6A3C7212&_nc_sid=10d13b' || true
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add img/galeri/ assets/logo.jpg
+          git diff --staged --quiet || git commit -m "chore: download Instagram images via Actions"
+          git push
